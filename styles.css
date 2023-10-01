@@ -1,0 +1,16 @@
+    /* #cv-template{
+        display:none;
+    } */
+
+    .myimg{
+    
+        border-radius: 50%;
+        width: 200px;
+    }
+    .background{
+        background-color: aqua;
+    }
+    body{
+        /* background-image: linear-gradient(#00c774, #3c38ba); */
+        background-image: url(https://s3.envato.com/files/382231202/light.jpg);
+    }
