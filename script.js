@@ -1,10 +1,10 @@
-function AddNewWeField()
+function addNewWEField()
 {
     let newNode = document.createElement("textarea")
     newNode.classList.add("form-control");
-    newNode.classList.add("wefield");
+    newNode.classList.add("weField");
     newNode.classList.add("mt-2");
-    // newNode.setAttribute("placeholder" , "Enter here");
+    newNode.setAttribute("placeholder" , "Enter here");
 
 
     let weOb = document.getElementById("we");
@@ -13,13 +13,13 @@ function AddNewWeField()
     weOb.insertBefore(newNode, weAddButtonOb); 
 }
 
-function AddNewAQField()
+function addNewAQField()
 {
     let newNode = document.createElement("textarea");
     newNode.classList.add("form-control");
-    newNode.classList.add("eqfield");
+    newNode.classList.add("eqField");
     newNode.classList.add("mt-2");
-    // newNode.setAttribute("placeholder" , "Enter here");
+    newNode.setAttribute("placeholder" , "Enter here");
 
 
     let aqOb = document.getElementById("aq");
@@ -87,6 +87,19 @@ function generateCV(){
         str1 += `<li> ${e.value} </li>`;
     }
     document.getElementById('aqT').innerHTML=str1;
+
+
+    // code for setting image
+    let file = document.getElementById("imgField").files[0];
+    console.log(file);
+    let reader = new FileReader()
+    reader.readAsDataURL(file);    
+    console.log(FileReader.result);
+
+
+    reader.onloadend = function(){
+        document.getElementById('imgTemplate').src= reader.result;
+    }
 
     document.getElementById('cv-form').style.display="none";
     document.getElementById('cv-template').style.display="block";
